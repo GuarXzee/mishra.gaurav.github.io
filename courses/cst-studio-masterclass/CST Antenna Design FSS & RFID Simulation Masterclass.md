@@ -4,37 +4,37 @@
 
 ### RF Parameters
 #### S-Parameters
-- Describes the input-output parameters between ports and or terminals in an electric system.
-- It is also a mathematical representation of how RF energy propagates in a multiport network.
-- S11, S12, S21, S22 are S-parameters or scattering parameters.
-- S12, S22 have the meaning of transmission coefficients.
+- Describe how RF energy travels between ports in a network.
+- Used to model input-output behavior in multiport systems.
+- Common parameters: S11, S12, S21, S22.
+- Reflection parameters: S11 and S22.
+- Transmission parameters: S12 and S21.
+- S-parameters help calculate return loss, impedance, admittance, VSWR, gain/loss, phase, and group delay.
 
 #### S11 Parameter
-- This is the input port voltage reflection coefficient.
-- It is reflected power radio 1 is trying to deliver to antenna 1. It tells us how much of a signal is reflected to the receiver after striking the antenna.
-- It is mostly used in antennas for checking how much power is transmitted.
-- S11 parameter graph should be less than -10 dB. This condition shows that more than almost 90% of power is transmitted and 10% is reflected.
-- At -3 dB, there will be 50% transmission as well as reflection.
+- Input-port reflection coefficient.
+- Measures power reflected back from port 1.
+- Used to check antenna matching.
+- Good match: S11 < -10 dB (≈ 90% power accepted).
+- At -3 dB, transmitted and reflected power are equal.
+
 #### S22 Parameter
-- This is the output port voltage reflection coefficient.
-- It is reflected power radio 2 is trying to deliver to antenna 2.
-- S11 and S22 provide us following useful information:
-	- Return loss or reflection coefficient
-	- Impedance and Admittance
-	- VSWR of input and output ports
+- Output-port reflection coefficient.
+- Measures power reflected back from port 2.
+- Works like S11 for the second port.
+- Together with S11, it gives return loss, impedance, admittance, and VSWR for both ports.
+
 #### S12 Parameter
-- Reverse voltage gain.
-- It is the power from radio 2 that is delivered through antenna 1 to radio 1.
+- Reverse transmission coefficient.
+- Measures power from port 2 delivered back to port 1.
+- Useful for evaluating reverse coupling.
 
 #### S21 Parameter
-- Forward voltage gain.
-- This is the transmission coefficient.
-- It is the power received at antenna 2 relative to the power input to antenna 1.
-- It tells how much of the signal is transmitted into the surface.
-- It is mostly used in EBG (Electromagnetic Bandgap) or FSS (Frequency Selective Surface) structures to check how much of the signal is absorbed by them.
-- S21 and S12 provide us following useful information:
-	- Gain/Loss (i.e. insertion loss)
-	- Phase and Group Delay
+- Forward transmission coefficient.
+- Measures power from port 1 delivered to port 2.
+- Used to evaluate insertion loss or gain.
+- Important for EBG/FSS structures to assess how much signal passes through or is absorbed.
+- Also gives phase and group delay information.
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" font-family="Cambria, Georgia, serif">
   <defs>
@@ -54,26 +54,30 @@
   <text x="45" y="235" font-size="22" fill="#ffffff">Reflected</text>
   <text x="45" y="265" font-size="22" fill="#ffffff">Power</text>
 </svg>
-#### Insertion Loss = Transmitted power / Incident Power
-#### Return Loss = Reflected Power / Incident Power
+
+#### Insertion Loss
+- Insertion Loss = Transmitted power / Incident power.
+
+#### Return Loss
+- Return Loss = Reflected power / Incident power.
+
 #### VSWR
-- VSWR stands for Voltage standing wave ratio.
-- This is the measure of how efficiently a radio power is transmitted through a transmission line the antenna.
-- It is also the measure of the reflected standing waves along the feeder.
-- The Voltage standing wave ratio (VSWR) is an indication of the amount of mismatch between an antenna and the feed line connecting to it.
-- The range of values for VSWR in from 1 to infinity.
-- A VSWR value under 2 is considered suitable for most antenna applications. The antenna can be described as having a good match.
-- So when someone says that the antenna is poorly matched, very often it means that the VSWR value exceeds 2 for a frequency of interest.
+- Voltage Standing Wave Ratio.
+- Measures mismatch between antenna and feed line.
+- Indicates reflected standing waves along the feeder.
+- Range: 1 to infinity.
+- VSWR < 2 is generally acceptable.
+- VSWR > 2 means poor matching at that frequency.
 
 #### Gain
-- It describes how much power is transmitted in the desired direction to that of the isotropic antenna.
-- A transmitting antenna with 3 dB gain means that the power received far from the antenna will be 3 dB higher (twice as much) than what would be received from a lossless isotropic antenna with same input power.
+- Ratio of power radiated in a direction to power from an isotropic antenna.
+- 3 dB gain means twice the power in that direction compared to isotropic.
 
 #### RCS
-- Radar Cross-section is the detectability of an object by radar.
-- It is also the ability of an object to reflect radar signal in direction of its receiver.
-- Large RCS indicates that an object is easily detectable.
+- Radar Cross Section.
+- Describes how detectable an object is by radar.
+- Large RCS means easier detection.
 
 #### Bandwidth
-- An antenna’s bandwidth is the range of frequencies (or wavelengths) over which it works effectively.
-- The broader the bandwidth, the greater the range of different radio waves you can pick up.
+- Frequency range over which the antenna works effectively.
+- Wider bandwidth covers more radio frequencies.
